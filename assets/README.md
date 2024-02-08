@@ -47,7 +47,7 @@ import { Camera } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className='h-screen flex items-center justify-center'>
+    <div className='flex h-screen items-center justify-center'>
       <Button>default button</Button>
       <Button variant='outline' size='icon'>
         <Camera />
@@ -112,15 +112,15 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main>
-      <header className='max-w-6xl mx-auto px-4 sm:px-8 py-6 '>
+      <header className='mx-auto max-w-6xl px-4 py-6 sm:px-8 '>
         <Image src={Logo} alt='logo' />
       </header>
-      <section className='max-w-6xl mx-auto px-4 sm:px-8 h-screen -mt-20 grid lg:grid-cols-[1fr,400px] items-center'>
+      <section className='mx-auto -mt-20 grid h-screen max-w-6xl items-center px-4 sm:px-8 lg:grid-cols-[1fr,400px]'>
         <div>
-          <h1 className='capitalize text-4xl md:text-7xl font-bold'>
+          <h1 className='text-4xl font-bold capitalize md:text-7xl'>
             job <span className='text-primary'>tracking</span> app
           </h1>
-          <p className='leading-loose max-w-md mt-4 '>
+          <p className='mt-4 max-w-md leading-loose '>
             I am baby wayfarers hoodie next level taiyaki brooklyn cliche blue
             bottle single-origin coffee chia. Aesthetic post-ironic venmo,
             quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
@@ -330,14 +330,14 @@ function layout({ children }: PropsWithChildren) {
   return (
     <main className='grid lg:grid-cols-5'>
       {/* first-col hide on small screen */}
-      <div className='hidden lg:block lg:col-span-1 lg:min-h-screen'>
+      <div className='hidden lg:col-span-1 lg:block lg:min-h-screen'>
         <Sidebar />
       </div>
       {/* second-col hide dropdown on big screen */}
 
       <div className='lg:col-span-4'>
         <Navbar />
-        <div className='py-16 px-4 sm:px-8 lg:px-16'>{children}</div>
+        <div className='px-4 py-16 sm:px-8 lg:px-16'>{children}</div>
       </div>
     </main>
   );
@@ -382,9 +382,9 @@ function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className='py-4 px-8 bg-muted h-full'>
+    <aside className='bg-muted h-full px-8 py-4'>
       <Image src={Logo} alt='logo' className='mx-auto' />
-      <div className='flex flex-col mt-20 gap-y-4'>
+      <div className='mt-20 flex flex-col gap-y-4'>
         {links.map((link) => {
           return (
             <Button
@@ -435,7 +435,7 @@ import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
   return (
-    <nav className='bg-muted py-4 sm:px-16 lg:px-24 px-4 flex items-center justify-between'>
+    <nav className='bg-muted flex items-center justify-between px-4 py-4 sm:px-16 lg:px-24'>
       <div>
         <LinksDropdown />
       </div>
@@ -1075,10 +1075,10 @@ function CreateJobForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='bg-muted p-8 rounded'
+        className='bg-muted rounded p-8'
       >
-        <h2 className='capitalize font-semibold text-4xl mb-6'>add job</h2>
-        <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start'>
+        <h2 className='mb-6 text-4xl font-semibold capitalize'>add job</h2>
+        <div className='grid items-start gap-4 md:grid-cols-2 lg:grid-cols-3'>
           {/* position */}
           <CustomFormField name='position' control={form.control} />
           {/* company */}
@@ -1675,7 +1675,7 @@ function SearchContainer() {
 
   return (
     <form
-      className='bg-muted mb-16 p-8 grid sm:grid-cols-2 md:grid-cols-3  gap-4 rounded-lg'
+      className='bg-muted mb-16 grid gap-4 rounded-lg p-8  sm:grid-cols-2 md:grid-cols-3'
       onSubmit={handleSubmit}
     >
       <Input
@@ -1770,7 +1770,7 @@ function JobsList() {
   return (
     <>
       {/*button container  */}
-      <div className='grid md:grid-cols-2  gap-8'>
+      <div className='grid gap-8  md:grid-cols-2'>
         {jobs.map((job) => {
           return <JobCard key={job.id} job={job} />;
         })}
@@ -1900,7 +1900,7 @@ JobInfo.tsx
 ```tsx
 function JobInfo({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className='flex gap-x-2 items-center'>
+    <div className='flex items-center gap-x-2'>
       {icon}
       {text}
     </div>
@@ -1917,7 +1917,7 @@ JobCard.tsx
   <JobInfo icon={<MapPin />} text={job.location} />
   <JobInfo icon={<CalendarDays />} text={date} />
   <Badge className='w-32  justify-center'>
-    <JobInfo icon={<RadioTower className='w-4 h-4' />} text={job.status} />
+    <JobInfo icon={<RadioTower className='h-4 w-4' />} text={job.status} />
   </Badge>
 </CardContent>
 ```
@@ -2353,10 +2353,10 @@ function EditJobForm({ jobId }: { jobId: string }) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='bg-muted p-8 rounded'
+        className='bg-muted rounded p-8'
       >
-        <h2 className='capitalize font-semibold text-4xl mb-6'>edit job</h2>
-        <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start'>
+        <h2 className='mb-6 text-4xl font-semibold capitalize'>edit job</h2>
+        <div className='grid items-start gap-4 md:grid-cols-2 lg:grid-cols-3'>
           {/* position */}
           <CustomFormField name='position' control={form.control} />
           {/* company */}
@@ -2710,9 +2710,9 @@ type StatsCardsProps = {
 function StatsCards({ title, value }: StatsCardsProps) {
   return (
     <Card className='bg-muted'>
-      <CardHeader className='flex flex-row justify-between items-center'>
+      <CardHeader className='flex flex-row items-center justify-between'>
         <CardTitle className='capitalize'>{title}</CardTitle>
-        <CardDescription className='text-4xl font-extrabold text-primary mt-[0px!important]'>
+        <CardDescription className='text-primary mt-[0px!important] text-4xl font-extrabold'>
           {value}
         </CardDescription>
       </CardHeader>
@@ -2767,7 +2767,7 @@ function StatsContainer() {
   });
 
   return (
-    <div className='grid md:grid-cols-2 gap-4 lg:grid-cols-3'>
+    <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
       <StatsCard title='pending jobs' value={data?.pending || 0} />
       <StatsCard title='interviews set' value={data?.interview || 0} />
       <StatsCard title='jobs declined' value={data?.declined || 0} />
@@ -2795,8 +2795,8 @@ StatsCard.tsx
 ```tsx
 export function StatsLoadingCard() {
   return (
-    <Card className='w-[330px] h-[88px]'>
-      <CardHeader className='flex flex-row justify-between items-center'>
+    <Card className='h-[88px] w-[330px]'>
+      <CardHeader className='flex flex-row items-center justify-between'>
         <div className='flex items-center space-x-4'>
           <Skeleton className='h-12 w-12 rounded-full' />
           <div className='space-y-2'>
@@ -2818,7 +2818,7 @@ stats/loading.tsx
 import { StatsLoadingCard } from '@/components/StatsCard';
 function loading() {
   return (
-    <div className='grid md:grid-cols-2 gap-4 lg:grid-cols-3'>
+    <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
       <StatsLoadingCard />
       <StatsLoadingCard />
       <StatsLoadingCard />
@@ -2835,7 +2835,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 function loading() {
   return (
-    <div className='p-8 grid sm:grid-cols-2 md:grid-cols-3  gap-4 rounded-lg border'>
+    <div className='grid gap-4 rounded-lg border  p-8 sm:grid-cols-2 md:grid-cols-3'>
       <Skeleton className='h-10' />
       <Skeleton className='h-10 ' />
       <Skeleton className='h-10 ' />
@@ -2910,7 +2910,7 @@ function ChartsContainer() {
   if (!data || data.length < 1) return null;
   return (
     <section className='mt-16'>
-      <h1 className='text-4xl font-semibold text-center'>
+      <h1 className='text-center text-4xl font-semibold'>
         Monthly Applications
       </h1>
       <ResponsiveContainer width='100%' height={300}>
