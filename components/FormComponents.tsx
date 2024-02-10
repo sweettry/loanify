@@ -40,7 +40,7 @@ export function CustomFormField({ name, control }: CustomeFormFieldProps) {
 
 type CustomeFormSelectProps = {
   name: string;
-  control: Control;
+  control: Control<any>;
   items: string[];
   labelText?: string;
 };
