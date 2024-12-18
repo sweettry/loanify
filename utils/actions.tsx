@@ -8,8 +8,12 @@ import dayjs from 'dayjs';
 function authenticateAndRedirect(): string {
   const { userId } = auth();
   if (!userId) {
-    redirect('/');
+    console.error('User is not authenticated.');
+    // You might want to throw an error or handle the situation appropriately.
+    // For simplicity, let's return an empty string here.
+    return '';
   }
+  console.log('Authenticated user ID:', userId);
   return userId;
 }
 
@@ -18,18 +22,26 @@ export async function createJobAction(
 ): Promise<JobType | null> {
   await new Promise((resolve) => setTimeout(resolve, 3000));
   const userId = authenticateAndRedirect();
+
   try {
     createAndEditJobSchema.parse(values);
-    const job: JobType = await prisma.job.create({
-      data: {
-        ...values,
+    console.log('Before prisma.job.create');
 
-        clerkId: userId,
-      },
-    });
+    const job: JobType = await prisma.job
+      .create({
+        data: {
+          ...values,
+
+          clerkId: userId,
+        },
+      })
+      .catch((prismaError) => {
+        console.error('prisma error: ', prismaError);
+        throw prismaError;
+      });
     return job;
   } catch (error) {
-    console.error(error);
+    console.error('Error creating job:', error);
     return null;
   }
 }

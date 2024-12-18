@@ -1,4 +1,4 @@
-import CreateJob from '@/components/CreateJob';
+import CreateJobForm from '@/components/CreateJob';
 import {
   dehydrate,
   HydrationBoundary,
@@ -9,7 +9,7 @@ function AddJobPage() {
   const queryClient = new QueryClient();
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CreateJob />
+      <CreateJobForm />
     </HydrationBoundary>
   );
 }

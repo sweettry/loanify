@@ -22,6 +22,21 @@ const links: NavLink[] = [
     label: 'stats',
     icon: <AreaChart />,
   },
+  {
+    href: '/compare',
+    label: 'Loan Compare',
+    icon: <AreaChart />,
+  },
+  {
+    href: '/template',
+    label: 'Template',
+    icon: <AreaChart />,
+  },
+  {
+    href: '/new-template',
+    label: 'New Template',
+    icon: <AreaChart />,
+  },
 ];
 
 export default links;

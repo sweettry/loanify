@@ -1,0 +1,77 @@
+{
+  "1": {
+    "currentLoan": {
+      "Current Lender": "CAPITAL ONE AUTO",
+      "Co-signer": true,
+      "Opening Balance": 38091,
+      "Remaining Balance": 24385,
+      "Payments Remaining": {
+        "completed": 42,
+        "total": 76
+      },
+      "Estimated APR": 12.15,
+      "Monthly Payment": 721
+    },
+    "newLoan": {}
+  },
+  "2": {
+    "currentLoan": {
+      "Current Lender": "CAPITAL ONE AUTO",
+      "Co-signer": true,
+      "Opening Balance": 38091,
+      "Remaining Balance": 24385,
+      "Payments Remaining": {
+        "completed": 42,
+        "total": 76
+      },
+      "Estimated APR": 12.15,
+      "Monthly Payment": 721
+    },
+    "newLoan": {
+      "Lender Name": "Liberty Federal Credit Union",
+      "Payoff Amount": 23672.2,
+      "Sales Tax": 0,
+      "Net Trade In": 0,
+      "Down Payment": 0,
+      "GAP": 770,
+      "VSC": 2090,
+      "Total Fees": 689,
+      "Cash Back": 0,
+      "Total Amount Financed": 27221.2,
+      "Term": 63,
+      "Interest Rate": 7.07,
+      "APR": 8.07,
+      "Payment": 520.01,
+      "First Payment Date": "01-06-2025"
+    }
+  },
+  "AP24117807261": {
+    "currentLoan": {
+      "Current Lender": "TD AUTO FINANCE",
+      "Opening Balance": 31728,
+      "Remaining Balance": 30731,
+      "Payments Remaining": {
+        "completed": 70,
+        "total": 72
+      },
+      "Estimated APR": 9.07,
+      "Monthly Payment": 573
+    },
+    "newLoan": {
+      "Lender Name": "American Heritage FCU",
+      "Payoff Amount": 30784.25,
+      "Sales Tax": 0,
+      "Net Trade In": 0,
+      "Down Payment": 0,
+      "GAP": 995,
+      "Total Fees": 549,
+      "Cash Back": 0,
+      "Total Amount Financed": 32328.25,
+      "Term": 63,
+      "Interest Rate": 15.99,
+      "APR": 5.99,
+      "Payment": 602.32,
+      "First Payment Date": "02-01-2025"
+    }
+  }
+}
